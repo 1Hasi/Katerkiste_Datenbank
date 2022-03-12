@@ -1,3 +1,27 @@
+/* =======UNIVERSAL======= */
+/* Variabeln */
+/* Farbwahl */
+
+:root {
+  --gold: /* #E0AC43 -> Bierfarbe */ #E0AC43;                       /* Invert: #E0AC43 */
+  --lightblack: /* #222222 -> hell schwarz */ #222222;				/* Invert: #f2f2f2 */
+  --whitegrey: /* #f2f2f2 -> schrift/fast weiß */ #f2f2f2;			/* Invert: #000000 */
+  --darkblack: /* #000000 -> schwarz dunkel */ #000000;			/* Invert: #ffffff */
+
+  --grey: /* #a2a2a2 -> wirklich grau NIU */ ;
+  --white: /* #ffffff -> weiß NIU */ ;
+}
+
+[data-theme="dark"] /*white-Mode*/{
+  --gold: /* #E0AC43 -> Bierfarbe */ #E0AC43;
+  --lightblack: /* #222222 -> hell schwartz */ #E0E0E0;
+  --whitegrey: /* #f2f2f2 -> schrift/fast weiß */ #000000;
+  --darkblack: /* #000000 -> schwartz dunkel */ #f2f2f2;
+
+  --grey: /* #a2a2a2 -> wirklich grau NIU */ ;
+  --white: /* #ffffff -> weiß NIU */ ;
+}
+
 html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
@@ -13,6 +37,16 @@ body {
 }
 #root {
   height: 100%;
+}
+
+.left {
+  text-align: left;
+  float: left;
+}
+
+.right {
+  text-align: right;
+  float: right;
 }
 
 /* Layout */
@@ -36,8 +70,39 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #006d77;
-  color: #edf6f9;
+  background-color: var(--gold);	
+  color: var(--darkblack);
+  height: 200%;
+	width: 74%;
+  padding: 5% 13%;
+	float: left;
+}
+.foot {
+  
+  background-color: var(--gold);
+  
+  margin: 3rem;
+}
+.pay {
+	margin-right: 2%;
+}
+
+.socialmedia img {
+  width: 25%;
+	padding-right: 1%;
+}
+.totop_icon {
+	width: 1.5em;
+	color: var(--gold);														/* Nachobenbutten Schrift Gold */
+	font-size: 3.5em;
+	background-color: var(--darkblack);										/* Nachobenbutten Tiefschwartz */
+	cursor: pointer;
+	border-radius: 15px;
+  transform: scale(1);
+  transition: 0.5s ease-in-out
+}
+.col-4 {
+  width: 29.33%;
 }
 /* Common */
 h1 {
