@@ -2,11 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { signout } from './actions/userActions';
-import HomeScreen from './screens/AngebotsScreen';
+import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
+
 
   function App() {
 
@@ -55,6 +56,7 @@ import AngebotsScreen from './screens/AngebotsScreen';
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
+             
               <Route path="/" element={<HomeScreen/>} exact></Route>
             </Routes>
           </main>
