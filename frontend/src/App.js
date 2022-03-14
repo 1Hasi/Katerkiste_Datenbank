@@ -11,7 +11,8 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
-
+import KontaktScreen from './screens/KontaktScreen';
+import UeberUnsScreen from './screens/UeberUnsScreen';
 
 
   function App() {
@@ -74,6 +75,8 @@ import AngebotsScreen from './screens/AngebotsScreen';
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
+              <Route path="/kontakt" element={<KontaktScreen/>}></Route>
+              <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
              
               <Route
               path="/productlist"
@@ -105,7 +108,7 @@ import AngebotsScreen from './screens/AngebotsScreen';
 				      </div>
 			      </div>
 			      <div className="foot">
-              <Link to="/kontakt"><h4>Kontakt</h4></Link>
+              <Link to="/kontakt"><h4k>Kontakt</h4k></Link>
                 <p> &copy Katerkiste GmbH <br></br>
                     Katzenallee 69 <br></br>
                     89522 Heidenheim <br></br>
