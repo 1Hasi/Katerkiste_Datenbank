@@ -15,9 +15,9 @@ import {
 
 export default function ProductListScreen(props) {
   const navigate = useNavigate();
-
+    
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const { loading, error, products } = productList;
 
   const productCreate = useSelector((state) => state.productCreate);
   const {
@@ -45,7 +45,7 @@ export default function ProductListScreen(props) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
     dispatch(
-      listProducts({ })
+      listProducts
     );
   }, [
     createdProduct,
@@ -119,17 +119,6 @@ export default function ProductListScreen(props) {
               ))}
             </tbody>
           </table>
-          <div className="row center pagination">
-            {[...Array(pages).keys()].map((x) => (
-              <Link
-                className={x + 1 === page ? 'active' : ''}
-                key={x + 1}
-                to={`/productlist/pageNumber/${x + 1}`}
-              >
-                {x + 1}
-              </Link>
-            ))}
-          </div>
         </>
       )}
     </div>
