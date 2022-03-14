@@ -138,13 +138,6 @@ button:hover {
   color: var(--gold);														
   border-color: var(--gold) var(--darkblack) var(--darkblack) var(--gold);
 }
-button.primary {
-  background-color: var(--lightblack);
-}
-button.primary:hover {
-  color: var(--gold);														
-  border-color: var(--gold) var(--darkblack) var(--darkblack) var(--gold);
-}
 button.block {
   width: 100%;
 }
