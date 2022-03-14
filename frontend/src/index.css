@@ -141,6 +141,24 @@ button:hover {
 button.block {
   width: 100%;
 }
+
+/* LINES */
+
+.vertical_line {
+  width: 2px;
+  height: 100%;
+  background: var(--gold);														/* vertikale Gold */
+
+}
+
+.horizontal_line {
+  width: 100%;
+  height: 2px;
+  background: var(--gold);														/* horizontal Gold */
+  margin: 4% 0 4% 0;
+}
+
+
 /* Header */
 header a {
   color: var(--whitegrey);
@@ -170,6 +188,49 @@ a.brand {
   flex: 2 1 50rem;
 }
 
+/* MAINPART HOME*/
+
+.cover {
+  margin: 0;
+  padding-left: 10%;
+  position: relative;
+}
+.cover img {
+  width: 85%;
+  display: block;
+}
+.cover span{
+  position: absolute;
+  color: var(--whitegrey);
+  top: 0;
+  margin: 4%;
+  font-size: 2em;
+  border-color: var(--gold);													/* Spruch Border Oben und Unten Gold */
+  border-width: 2px 0;
+  border-style: solid;
+}
+.cover button {
+  position: absolute;
+  bottom: 0;
+  padding: 1%;
+  margin: 5%;
+  font-size: 1em;
+  background-color: var(--lightblack);											/* Durst Button Hellesschwartz */
+  cursor: pointer;
+  color: var(--whitegrey);														/* Durst Button Schrift Grauweiß */
+}
+.cover a button:hover {
+  color: var(--gold);															/* Hover Button Durst Text Gold */
+  border-color: var(--gold) var(--darkblack) var(--darkblack) var(--gold);		/* Hover Button Durst Border Oben und Links Gold */ /* Hover Button Durst Border Unten und Rechts Tiefschwartz */
+}
+.cover img.cover_icon {
+  display: none;
+  position: relative;
+  width: 40%;
+  float: right;
+  margin: 27% 15% 15% 0;
+}
+
 /* Image */
 img {
   border-radius: 0.5rem;
@@ -182,7 +243,7 @@ img.large {
   width: 100%;
 }
 
-/* Card */
+/* Angebot Card */
 .card {
   border: 0.5rem var(--gold);
   border-radius: 0.5rem var(--gold);
