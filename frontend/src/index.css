@@ -7,36 +7,34 @@
   --lightblack: /* #222222 -> hell schwarz */ #222222;				/* Invert: #f2f2f2 */
   --whitegrey: /* #f2f2f2 -> schrift/fast weiß */ #f2f2f2;			/* Invert: #000000 */
   --darkblack: /* #000000 -> schwarz dunkel */ #000000;			/* Invert: #ffffff */
-
-  --grey: /* #a2a2a2 -> wirklich grau NIU */ ;
-  --white: /* #ffffff -> weiß NIU */ ;
 }
 
-[data-theme="dark"] /*white-Mode*/{
-  --gold: /* #E0AC43 -> Bierfarbe */ #E0AC43;
-  --lightblack: /* #222222 -> hell schwartz */ #E0E0E0;
-  --whitegrey: /* #f2f2f2 -> schrift/fast weiß */ #000000;
-  --darkblack: /* #000000 -> schwartz dunkel */ #f2f2f2;
-
-  --grey: /* #a2a2a2 -> wirklich grau NIU */ ;
-  --white: /* #ffffff -> weiß NIU */ ;
+/* latin */
+@font-face {
+  font-family: 'Patua One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/patuaone/v15/ZXuke1cDvLCKLDcimxB44_lu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-html {
-  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
-  box-sizing: border-box;
-}
+html,
 body {
+  height: 100%;
+  width: 100%;
   margin: 0;
-  height: 100vh;
-  font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: #edf6f9;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  background-color: var(--darkblack);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 #root {
   height: 100%;
+  color: var(--whitegrey);
 }
 
 .left {
@@ -62,7 +60,7 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #006d77;
+  background-color: var(--lightblack);
 }
 main {
   grid-area: main;
@@ -78,9 +76,7 @@ footer {
 	float: left;
 }
 .foot {
-  
   background-color: var(--gold);
-  
   margin: 3rem;
 }
 .pay {
@@ -93,9 +89,9 @@ footer {
 }
 .totop_icon {
 	width: 1.5em;
-	color: var(--gold);														/* Nachobenbutten Schrift Gold */
+	color: var(--gold);														
 	font-size: 3.5em;
-	background-color: var(--darkblack);										/* Nachobenbutten Tiefschwartz */
+	background-color: var(--darkblack);										
 	cursor: pointer;
 	border-radius: 15px;
   transform: scale(1);
@@ -115,11 +111,11 @@ h2 {
 }
 
 a {
-  color: #001524;
+  color: var(--whitegrey);
   text-decoration: none;
 }
 a:hover {
-  color: #FFDDD2;
+  color: var(--gold);
 }
 ul {
   padding: 0;
@@ -130,37 +126,35 @@ li {
   margin-top: 1rem;
 }
 button {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 0.1rem #006D77 solid;
-  font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #E29578;
+  bottom: 0;
+  padding: 1%;
+  margin-top: 5%;
+  font-size: 1.25em;
+  background-color: var(--lightblack);											
   cursor: pointer;
+  color: var(--whitegrey);	
 }
 button:hover {
-  border: 0.1rem #83C5BE solid;
-  background-color: #FFDDD2;
+  color: var(--gold);														
+  border-color: var(--gold) var(--darkblack) var(--darkblack) var(--gold);
 }
 button.primary {
-  background-color: #E29578;
+  background-color: var(--lightblack);
 }
 button.primary:hover {
-  border: 0.1rem #83C5BE solid;
-  background-color: #FFDDD2;
+  color: var(--gold);														
+  border-color: var(--gold) var(--darkblack) var(--darkblack) var(--gold);
 }
 button.block {
   width: 100%;
 }
 /* Header */
 header a {
-  color: #edf6f9;
+  color: var(--whitegrey);
   padding: 1rem;
 }
 a.brand {
-  color: #edf6f9;
+  color:var(--whitegrey);
   font-size: 3rem;
   font-weight: bold;
 }
@@ -197,8 +191,9 @@ img.large {
 
 /* Card */
 .card {
-  border: 0.1rem #83C5BE solid;
-  background-color: #83C5BE;
+  border: 0.5rem var(--gold);
+  border-radius: 0.5rem var(--gold);
+  background-color: var(--darkblack);
   border-radius: 0.5rem;
   margin: 1rem;
 }
@@ -211,14 +206,7 @@ img.large {
 .price {
   font-size: 2rem;
 }
-/* Rating */
-.rating span {
-  color: #f0c040;
-  margin: 0.1rem;
-}
-.rating span:last-child {
-  color: #404040;
-}
+
 /* Alert */
 .loading {
   display: block !important;
@@ -243,7 +231,7 @@ img.large {
   background-color: #ffe0e0;
 }
 
-/* Form */
+/* Form für regist/login */
 .form {
   max-width: 60rem;
   margin: 0 auto;
@@ -257,7 +245,7 @@ img.large {
   margin: 1rem 0;
   display: block;
 }
-/* Dropdown */
+/* Dropdown menüleiste (anscheinend) */
 .dropdown {
   display: inline-block;
   position: relative;
