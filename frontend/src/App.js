@@ -81,8 +81,8 @@ import AngebotsScreen from './screens/AngebotsScreen';
                 <AdminRoute>
                   <ProductListScreen />
                 </AdminRoute>
-              }
-            />
+              }></Route>
+            
 
               <Route path="/" element={<HomeScreen/>} exact></Route>
             </Routes>
