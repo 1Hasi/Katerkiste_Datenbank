@@ -31,11 +31,11 @@ return (
 
 <div className="content">															
 
-    <div className="row left">
+    <div className="rowalt left">
         <div className="horizontal_line"></div>
     </div>
 
-    <div className="row left">													
+    <div className="rowalt left">													
         <div className="h_content col-6 left">
                 <Link to="/angebote"><h2>Tipp des Monats</h2></Link>
                     <p>Ihr habt abgestimmt!
@@ -62,11 +62,11 @@ return (
         </div>
     </div>
 
-    <div className="row left">
+    <div className="rowalt left">
         <div className="horizontal_line"></div>
     </div>
 
-    <div className="row left">												
+    <div className="rowalt left">												
         <div className="h_content col-6 left laster">
                 <img src="img/lastwagen_kater.png" alt="Express Lieferung"></img>
         </div>
@@ -87,11 +87,11 @@ return (
         </div>
     </div>
 
-    <div className="row left">
+    <div className="rowalt left">
         <div className="horizontal_line"></div>
     </div>
 
-    <div className="row left">																
+    <div className="rowalt left">																
         <div className="h_content col-6 left">
                 <a href="Angebote.html"><h2>Angebote</h2></a>
                 <p>Wir bieten die unterschiedlichsten Sets für jede Situation an.
@@ -113,7 +113,7 @@ return (
             </div>
         <div className="h_content col-6 left getraenke">
                 <Link to="/angebote">
-                    <img src="img/Getränke.png" alt="Getränke"></img>
+                    <img src="img/Getraenke.png" alt="Getränke"></img>
                 </Link>
         </div>
     </div>
