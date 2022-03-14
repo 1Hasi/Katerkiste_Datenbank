@@ -39,12 +39,14 @@ export default function ProductListScreen(props) {
   useEffect(() => {
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET });
-      navigate(`/product/${createdProduct._id}/edit`);
+      navigate(`/products/${createdProduct._id}/edit`);
     }
     if (successDelete) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
-    
+    dispatch(
+      listProducts({ })
+    );
   }, [
     createdProduct,
     dispatch,

@@ -2,12 +2,16 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { signout } from './actions/userActions';
+import AdminRoute from './components/AdminRoute';
+import PrivateRoute from './components/PrivateRoute';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
+
 
 
   function App() {
@@ -56,7 +60,7 @@ import AngebotsScreen from './screens/AngebotsScreen';
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/products/:id/edit">Produkte bearbeiten</Link>
+                    <Link to="/productlist">Produkte</Link>
                   </li>
                 </ul>
               </div>
@@ -65,12 +69,21 @@ import AngebotsScreen from './screens/AngebotsScreen';
           </header>
           <main>
             <Routes>
-              <Route path="/product/:id" element={<ProductScreen/>} exact></Route>
-              <Route path="/product/:id" element={<ProductListScreen/>}></Route>
+              <Route path="/products/:id" element={<ProductScreen/>} exact></Route>
+              <Route path="/products/:id/edit" element={ProductEditScreen}></Route>
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
              
+              <Route
+              path="/productlist"
+              element={
+                <AdminRoute>
+                  <ProductListScreen />
+                </AdminRoute>
+              }
+            />
+
               <Route path="/" element={<HomeScreen/>} exact></Route>
             </Routes>
           </main>

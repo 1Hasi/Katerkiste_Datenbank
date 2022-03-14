@@ -41,13 +41,20 @@ productRouter.post(
   isAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
-      name: 'sample name ' + Date.now(),
-      preis: 0,
-      bild: '/images/p1.jpg',
-      beschreibung: 'sample description',
+      name : req.body.name,
+      bild : req.body.bild,
+      preis : req.body.preis,
+      beschreibung : req.body.beschreibung
     });
     const createdProduct = await product.save();
-    res.send({ message: 'Produkt angelegt', product: createdProduct });
+    res.send({
+      _id: createdProduct._id,
+      name: createdProduct.name,
+      bild: createdProduct.bild,
+      preis: createdProduct.preis,
+      beschreibung: createdProduct.beschreibung
+    }, 
+      { message: 'Produkt angelegt', product: createdProduct });
   })
 );
 productRouter.put(
