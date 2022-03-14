@@ -70,7 +70,7 @@ import AngebotsScreen from './screens/AngebotsScreen';
           <main>
             <Routes>
               <Route path="/products/:id" element={<ProductScreen/>} exact></Route>
-              <Route path="/products/:id/edit" element={ProductEditScreen}></Route>
+              <Route path="/products/:id/edit" element={<ProductEditScreen/>}></Route>
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>

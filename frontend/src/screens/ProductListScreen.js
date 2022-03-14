@@ -45,7 +45,7 @@ export default function ProductListScreen(props) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
     dispatch(
-      listProducts
+      listProducts({ })
     );
   }, [
     createdProduct,
@@ -57,7 +57,7 @@ export default function ProductListScreen(props) {
   ]);
 
   const deleteHandler = (product) => {
-    if (window.confirm('Are you sure to delete?')) {
+    if (window.confirm('Sind Sie sicher, dass Sie das Produkt löschen möchten?')) {
       dispatch(deleteProduct(product._id));
     }
   };
@@ -90,7 +90,9 @@ export default function ProductListScreen(props) {
               <tr>
                 <th>ID</th>
                 <th>NAME</th>
+                <th>BILD</th>
                 <th>PREIS</th>
+                <th>BESCHREIBUNG</th>
               </tr>
             </thead>
             <tbody>
@@ -98,7 +100,9 @@ export default function ProductListScreen(props) {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
+                  <td>{product.bild}</td>
                   <td>{product.preis}</td>
+                  <td>{product.beschreibung}</td>
                   <td>
                     <button
                       type="button"
