@@ -24,33 +24,14 @@ const data = {
 
   products: [
     {
-      name: 'Gucci Vase',
-      bild: '/images/p1.jpg',
+      name: 'Wein',
+      bild: '/images/p1.png',
       preis: 100,
-      beschreibung: 'sehr schöne luxus Vase',
+      beschreibung: 'dennis wein',
     },
     
-      {
-      name: 'Merkels Hammer',
-      bild: '/images/p2.jpg',
-      preis: 1500,
-      beschreibung: 'machtvolles politisches Instrument',
-    },
-
-    {
-      
-      name: 'Gaming PC',
-      bild: '/images/p3.jpg',
-      preis: 100,
-      beschreibung: 'geeignet für Spiele der neusten generation',
-    },
-    {
-      
-      name: 'VW Polo Felgen R14',
-      bild: '/images/p4.jpg',
-      preis: 100,
-      beschreibung: 'Kaum genutzte Felgen für VW Polo',
-    },
+    
+    
   ],
 };
 export default data;
