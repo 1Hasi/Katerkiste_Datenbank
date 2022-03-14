@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import ProductListScreen from './screens/ProductListScreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
@@ -48,11 +49,24 @@ import AngebotsScreen from './screens/AngebotsScreen';
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Admin <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/products/:id/edit">Produkte bearbeiten</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
             </div>
           </header>
           <main>
             <Routes>
-              <Route path="/product/:id" element={<ProductScreen/>}></Route>
+              <Route path="/product/:id" element={<ProductScreen/>} exact></Route>
+              <Route path="/product/:id" element={<ProductListScreen/>}></Route>
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
