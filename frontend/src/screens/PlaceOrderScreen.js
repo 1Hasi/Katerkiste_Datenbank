@@ -42,7 +42,7 @@ export default function PlaceOrderScreen(props) {
               <div className="card card-body">
                 <h2>Zahlungsmethode</h2>
                 <p>
-                  <strong>Methode:</strong> {cart.paymentMethod}
+                  <strong>Methode:</strong> {cart.paypal}
                 </p>
               </div>
             </li>
