@@ -33,7 +33,7 @@ export default function CartScreen(props) {
   };
   return (
     <div className="flexAngebot">
-      <div className="col-2">
+      <div className="col-62">
         <h1>Warenkorb</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (

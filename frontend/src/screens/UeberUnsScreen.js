@@ -45,17 +45,17 @@ return (
 				</div>
 
 				<div className="row left">
-					<div className="horizontal_line show_team">
+					<div className="horizontal_line">
 					</div>
 				</div>
 
 				<div className="row left uu_h">														
 					<h2>Das Team</h2>
 					<div className="flex">
-						<div className="hasan">
+						<div className="formimg">
 							<img className="imgCenter" src="img/MA/HasanH.png" alt="Hasan Haji"></img>
-							<h4f>CEO</h4f>
-							<h4f className="name">Hasan Haji</h4f>
+							<h4>CEO</h4>
+							<h4 className="name">Hasan Haji</h4>
 							<p>Der Kopf der Bande und Gründer der Katerkiste.
 								<br></br>
 								Zu seinen Aufgaben zählen die Bearbeitung und Weiterleitung von
@@ -68,10 +68,10 @@ return (
 							</p>
 						</div>
 
-						<div className="max">
+						<div className="formimg">
 							<img className="imgCenter" src="img/MA/MaxH.jpg" alt="Max Hettler"></img>
-							<h4f>Marketing Manager</h4f>
-							<h4f className="name">Max Hettler</h4f>
+							<h4>Marketing Manager</h4>
+							<h4 className="name">Max Hettler</h4>
 							<p>Einer der beiden ältesten Mitgliedern des Lieferservice.
 								<br></br>
 								Wirbt für das Produkt sowohl lokal als auch im Netz.
@@ -79,10 +79,10 @@ return (
 								Hört er von unzufriedenen Kunden, verschwinden diese für immer.
 							</p>
 						</div>
-						<div className="dennis">
+						<div className="formimg">
 							<img className="imgCenter" src="img/MA/DennisP.png" alt="Dennis Prichodko"></img>
-							<h4f>Content Creator</h4f>
-							<h4f className="name">Dennis Prichodko</h4f>
+							<h4>Content Creator</h4>
+							<h4 className="name">Dennis Prichodko</h4>
 							<p> Das andere älteste Mitglied.
 								<br></br>
 								Erstellt mit Leidenschaft neue
@@ -92,10 +92,10 @@ return (
 								Er wurde noch nie bezahlt.
 							</p>
 						</div>
-						<div className="patrick">
+						<div className="formimg">
 							<img className="imgCenter" src="img/MA/PatrickS.jpg" alt="Patrick Schneider"></img>
-							<h4f>Content Creator</h4f>
-							<h4f className="name">Patrick Schneider</h4f>
+							<h4>Content Creator</h4>
+							<h4 className="name">Patrick Schneider</h4>
 							<p>Nun auch schon längere Zeit mit im Unternehmen tätig.
 								<br></br>
 								Arbeitet an bestehenden Produkten, um sie zu optimieren und
@@ -105,7 +105,7 @@ return (
 							</p>
 						</div>
 
-						<div className="philipp">
+						<div className="formimg">
 							<img className="imgCenter" src="img/MA/PhilippW.png" alt="Philipp Wagner"></img>
 							<h4>Maskottchen</h4>
 							<h4 className="name">Philipp Wagner</h4>

@@ -39,6 +39,9 @@ body {
   font-family: 'Patua One';
 }
 
+
+
+
 .left {
   text-align: left;
   float: left;
@@ -222,10 +225,6 @@ footer {
 
 /* MAINPART ÜBER UNS */
 
-.show_team{
-
-}
-
 .imgCenter {
     margin-right: auto;
     margin-left: auto;
@@ -236,9 +235,20 @@ footer {
 .uu_h h2 {
   text-align: center;
   margin: 0 auto 5% auto;
+  color: var(--whitegrey);
 }
 
-.hasan, .max, .dennis, .patrick, .philipp{
+.uu_h h4{
+  color: var(--whitegrey);
+  position: center;
+}
+
+.uu_h h4.name {
+  color: var(--gold);
+  position: center;
+}
+
+.formimg{
   flex: 1;
   
 }
@@ -262,11 +272,6 @@ footer {
   width: 80%;
   border-radius: 2%;
 }
-
-.team h4.name {
-  color: var(--gold);														/* Teamnamen Gold */
-}
-
 
 /* MAINPART KONTAKT */
 
@@ -323,6 +328,11 @@ footer {
 
 .abstand{
   margin-right: 20px;
+}
+
+.col-62 {
+  width: 46%;
+  margin-bottom: 100px;
 }
 
 .col-0 {
@@ -533,6 +543,11 @@ img.large {
 }
 .price {
   font-size: 2rem;
+}
+
+.min-30{
+  font-size: 2rem;
+  color: var(--gold);
 }
 
 /* Alert */
