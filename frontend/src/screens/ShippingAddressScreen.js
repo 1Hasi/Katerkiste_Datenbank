@@ -70,7 +70,7 @@ export default function ShippingAddressScreen(props) {
         <div>
           <label htmlFor="plz">Postleitzahl</label>
           <input
-            type="text"
+            type="number"
             id="plz"
             placeholder="Postleitzahl eingeben"
             value={plz}

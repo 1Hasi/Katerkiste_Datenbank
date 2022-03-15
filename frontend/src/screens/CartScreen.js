@@ -29,7 +29,7 @@ export default function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    navigate('/signin?redirect=/shipping');
+    navigate('/shipping');
   };
   return (
     <div className="flexAngebot">
@@ -102,7 +102,7 @@ export default function CartScreen(props) {
                 className="primary block"
                 disabled={cartItems.length === 0}
               >
-                Proceed to Checkout
+                Zur Kasse
               </button>
             </li>
           </ul>

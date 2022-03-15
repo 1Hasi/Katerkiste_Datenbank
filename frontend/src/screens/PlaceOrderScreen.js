@@ -30,11 +30,11 @@ export default function PlaceOrderScreen(props) {
               <div className="card card-body">
                 <h2>Versandadresse</h2>
                 <p>
-                  <strong>Name:</strong> {cart.shippingAddress.vorname} 
-                                        {cart.shippingAddress.nachname}<br />
-                  <strong>Address: </strong> {cart.shippingAddress.adresse},
-                  {cart.shippingAddress.stadt}, {cart.shippingAddress.plz}
-                  ,{cart.shippingAddress.land}
+                  <strong>Name: </strong> {cart.shippingAddress.vorname } 
+                                         { cart.shippingAddress.nachname}<br />
+                  <strong>Address: </strong> {cart.shippingAddress.adresse} <br />
+                   {cart.shippingAddress.plz } {cart.shippingAddress.stadt} <br />
+                   {cart.shippingAddress.land}
                 </p>
               </div>
             </li>
