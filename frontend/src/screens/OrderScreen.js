@@ -20,54 +20,54 @@ export default function OrderScreen(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <h1>Order {order._id}</h1>
+      <h1>Bestellnummer: {order._id}</h1>
       <div className="row top">
         <div className="col-2">
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Shipping</h2>
+                <h2>Versandadresse</h2>
                 <p>
-                  <strong>Name:</strong> {order.shippingAddress.vorname} <br />
-                  <strong>Address: </strong> {order.shippingAddress.address},
-                  {order.shippingAddress.city},{' '}
-                  {order.shippingAddress.postalCode},
-                  {order.shippingAddress.country}
+                  <strong>Name:</strong> {order.shippingAddress.vorname} 
+                                         {order.shippingAddress.nachname} <br />
+                  <strong>Address: </strong> {order.shippingAddress.adresse}<br />
+                  {order.shippingAddress.plz} {' '} {order.shippingAddress.stadt}<br />
+                  {order.shippingAddress.land}
                 </p>
                 {order.isDelivered ? (
                   <MessageBox variant="success">
-                    Delivered at {order.deliveredAt}
+                    Geliefert am {order.deliveredAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Delivered</MessageBox>
+                  <MessageBox variant="danger">Nicht geliefert</MessageBox>
                 )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
+                <h2>Zahlungsmethode</h2>
                 <p>
-                  <strong>Method:</strong> {order.paymentMethod}
+                  <strong>Methode:</strong> {order.paymentMethod}
                 </p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
-                    Paid at {order.paidAt}
+                    Bezahlt am {order.paidAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
+                  <MessageBox variant="danger">Nicht bezahlt</MessageBox>
                 )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Order Items</h2>
+                <h2>Lieferung</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
                       <div className="row">
                         <div>
                           <img
-                            src={item.image}
+                            src={item.bild}
                             alt={item.name}
                             className="small"
                           ></img>
@@ -79,7 +79,7 @@ export default function OrderScreen(props) {
                         </div>
 
                         <div>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x {item.preis}€ = {item.qty * item.preis}€
                         </div>
                       </div>
                     </li>
@@ -93,33 +93,33 @@ export default function OrderScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <h2>Order Summary</h2>
+                <h2>Bestellübersicht</h2>
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div>Bestellung</div>
                   <div>${order.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
-                  <div>${order.shippingPrice.toFixed(2)}</div>
+                  <div>Versand</div>
+                  <div>{order.shippingPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
-                  <div>${order.taxPrice.toFixed(2)}</div>
+                  <div>MwSt</div>
+                  <div>{order.taxPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong> Gesamt </strong>
                   </div>
                   <div>
-                    <strong>${order.totalPrice.toFixed(2)}</strong>
+                    <strong>{order.totalPrice.toFixed(2)}€</strong>
                   </div>
                 </div>
               </li>

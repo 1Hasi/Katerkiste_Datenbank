@@ -18,6 +18,7 @@ import CartScreen from './screens/CartScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
 
 
   function App() {
@@ -105,25 +106,36 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
                 <CartScreen />
               </PrivateRoute>
               }></Route>
+
               <Route path="/cart/:id" element={
               <PrivateRoute>
                   <CartScreen />
                </PrivateRoute>
               }></Route>
+
               <Route path="/shipping" element={
                 <PrivateRoute>
                   <ShippingAddressScreen/>
                </PrivateRoute>
               }></Route>
+
               <Route path="/payment" element={
               <PrivateRoute>
                  <PaymentMethodScreen/>
                </PrivateRoute>
               }></Route>
+
               <Route path="/placeorder" element={
               <PrivateRoute>
                 <PlaceOrderScreen/>
                </PrivateRoute>
+              }></Route>
+
+
+              <Route path="/order/:id" element={
+                <PrivateRoute>
+                  <OrderScreen/>
+                </PrivateRoute>
               }></Route>
              
               <Route
