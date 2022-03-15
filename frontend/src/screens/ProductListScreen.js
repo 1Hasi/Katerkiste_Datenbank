@@ -45,7 +45,7 @@ export default function ProductListScreen(props) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
     dispatch(
-      listProducts({ })
+      listProducts()
     );
   }, [
     createdProduct,
@@ -107,7 +107,7 @@ export default function ProductListScreen(props) {
                     <button
                       type="button"
                       className="small"
-                      onClick={() => navigate(`/product/${product._id}/edit`)}
+                      onClick={() => navigate(`/products/${product._id}/edit`)}
                     >
                       Edit
                     </button>
