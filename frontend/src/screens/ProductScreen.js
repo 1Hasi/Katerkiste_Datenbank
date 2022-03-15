@@ -47,10 +47,6 @@ export default function ProductScreen(props) {
                   <h1>{product.name}</h1>
                 </li>
                 <li>
-                  <Rating
-                    rating={product.rating}
-                    numReviews={product.numReviews}
-                  ></Rating>
                 </li>
                 <li>Startpreis: {product.preis}€</li>
                 <li>

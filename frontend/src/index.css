@@ -533,6 +533,12 @@ img.large {
 .card-body {
   padding: 1rem;
 }
+
+.card-bodyAng {
+  padding: 1rem;
+  border-top: solid 1px var(--gold); 
+}
+
 .card-body > * {
   margin-bottom: 0.5rem;
 }
