@@ -8,14 +8,16 @@ export default function PaymentMethodScreen(props) {
     const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
-  if (!shippingAddress.address) {
+  if (!shippingAddress.adresse) {
     navigate('/shipping');
   }
-  const [paymentMethod, setPaymentMethod] = useState('PayPal');
+  const [paypal, setPaypal] = useState('PayPal');
+  const [visa, setVisa] = useState('Visa');
+  const [mastercard, setMastercard] = useState('MasterCard');
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paymentMethod));
+    dispatch(savePaymentMethod(paypal, visa, mastercard));
     navigate('/placeorder');
   };
   return (
@@ -25,6 +27,7 @@ export default function PaymentMethodScreen(props) {
         <div>
           <h1>Zahlungsmethode</h1>
         </div>
+     <div>
         <div>
           <div>
             <input
@@ -33,8 +36,7 @@ export default function PaymentMethodScreen(props) {
               value="PayPal"
               name="paymentMethod"
               required
-              checked
-              onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setPaypal(e.target.value)}
             ></input>
             <label htmlFor="paypal">PayPal</label>
           </div>
@@ -47,7 +49,7 @@ export default function PaymentMethodScreen(props) {
               value="Visa"
               name="paymentMethod"
               required
-              onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setVisa(e.target.value)}
             ></input>
             <label htmlFor="visa">Visa</label>
           </div>
@@ -60,11 +62,12 @@ export default function PaymentMethodScreen(props) {
               value="MasterCard"
               name="paymentMethod"
               required
-              onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setMastercard(e.target.value)}
             ></input>
             <label htmlFor="mastercard">MasterCard</label>
           </div>
         </div>
+    </div>
         <div>
           <label />
           <button className="primary" type="submit">
