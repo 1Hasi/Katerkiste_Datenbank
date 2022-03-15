@@ -67,6 +67,10 @@ h4 {
   color: var(--darkblack);
 }
 
+h4f{
+  font-size: 1.125rem;
+  color: var(--whitegrey);
+}
 
 hkk {
   font-size: 1.125rem;
@@ -136,7 +140,7 @@ header {
 }
 
 .content {
-  padding: 10%;
+  padding: 5%;
 }
 .content a {
   text-decoration: none;
@@ -218,10 +222,27 @@ footer {
 
 /* MAINPART ÜBER UNS */
 
+.show_team{
+
+}
+
+.imgCenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 80%;
+}
+
 .uu_h h2 {
   text-align: center;
   margin: 0 auto 5% auto;
 }
+
+.hasan, .max, .dennis, .patrick, .philipp{
+  flex: 1;
+  
+}
+
 
 .uu_content {
   padding: 2%;
@@ -554,4 +575,14 @@ img.large {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media(min-width: 468px) {
+  /* MAINPART ÜBER UNS */
+
+  .flex {
+  display: flex;
+  
+}
+  
 }

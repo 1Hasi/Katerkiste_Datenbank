@@ -58,7 +58,7 @@ return (
 
 				<div className="impressum col-6 left">										
 					<h2>Impressum</h2>
-					<p>&copy Katerkiste GmbH <br></br>
+					<p> &#169; Katerkiste GmbH <br></br>
 							Katzenallee 69 <br></br>
 							89522 Heidenheim <br></br> <br></br>
 
@@ -73,9 +73,9 @@ return (
 				</div>
 
 				<div className="team_k col-6 left">						
-					<a href="Über_uns.html#show_team">
+					<Link to="/ueberuns">
 						<h2>Das Team</h2>
-					</a>
+					</Link>
 					<p>
 						Hasan Haji <br></br>
 						Max Hettler <br></br>
