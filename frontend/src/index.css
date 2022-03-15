@@ -547,8 +547,6 @@ img.large {
   color: var(--gold)
 }
 
-
-
 .min-30{
   font-size: 2rem;
   color: var(--gold);
@@ -566,6 +564,10 @@ img.large {
 .h2W {
   font-size: 2rem;
   color: var(--darkblack)
+}
+
+.h5Prod{
+  width: 50%;
 }
 
 /* Admin panel*/
@@ -653,17 +655,21 @@ tr{
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.drophov:hover {
+  color: var(--lightblack)
+}
+
 /* Checkout Steps */
 .checkout-steps > div {
-  border-top: 0.3rem #c0c0c0 solid;
-  color: #c0c0c0;
+  border-top: 0.3rem var(--whitegrey) solid;
+  color: var(--whitegrey);
   flex: 1;
   padding: 1rem;
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #f08000;
-  color: #f08000;
+  border-top-color: var(--gold);
+  color: var(--gold);
 }
 
 @media(min-width: 468px) {

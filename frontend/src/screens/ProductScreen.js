@@ -48,9 +48,9 @@ export default function ProductScreen(props) {
                 </li>
                 <li>
                 </li>
-                <li>Startpreis: {product.preis}€</li>
+                <li><h3> Startpreis: {product.preis}€</h3></li>
                 <li>
-                  Beschreibung:
+                  <h3>Beschreibung:</h3>
                   <p>{product.beschreibung}</p>
                 </li>
               </ul>
