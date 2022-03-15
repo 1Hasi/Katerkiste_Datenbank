@@ -66,14 +66,11 @@ export default function ProductListScreen(props) {
   };
 
   return (
-    <div>
+    <div> 
       <div className="row">
         <h1 className="h1Admin">Produkte</h1>
-        <button type="button" className="primary" onClick={createHandler}>
-          Produkt anlegen
-        </button>
-      </div>
 
+      </div>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
