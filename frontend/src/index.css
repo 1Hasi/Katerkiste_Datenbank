@@ -68,12 +68,12 @@ h4 {
 }
 
 
-h4k {
+hkk {
   font-size: 1.125rem;
   color: var(--darkblack);
 }
 
-h4k:hover {
+hkk:hover {
   font-size: 1.125rem;
   color: var(--whitegrey);
 }

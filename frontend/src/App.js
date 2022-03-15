@@ -108,7 +108,7 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
 				      </div>
 			      </div>
 			      <div className="foot">
-              <Link to="/kontakt"><h4k>Kontakt</h4k></Link>
+              <Link to="/kontakt"><hkk>Kontakt</hkk></Link>
                 <p> &copy Katerkiste GmbH <br></br>
                     Katzenallee 69 <br></br>
                     89522 Heidenheim <br></br>
