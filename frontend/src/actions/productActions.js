@@ -44,15 +44,19 @@ export const detailsProduct = (productId) => async (dispatch) => {
     });
   }
 };
-export const createProduct = () => async (dispatch, getState) => {
+export const createProduct = (name, bild, preis, beschreibung) => async (dispatch, getState) => {
   dispatch({ type: PRODUCT_CREATE_REQUEST });
   const {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.post(
-      '/api/products',
-      {},
+    const { data } = await Axios.post('/api/products',
+      {
+        name,
+        bild,
+        preis,
+        beschreibung,
+      },
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       }
@@ -62,11 +66,13 @@ export const createProduct = () => async (dispatch, getState) => {
       payload: data.product,
     });
   } catch (error) {
-    const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
-    dispatch({ type: PRODUCT_CREATE_FAIL, payload: message });
+    dispatch({
+      type: PRODUCT_CREATE_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
   }
 };
 export const updateProduct = (product) => async (dispatch, getState) => {

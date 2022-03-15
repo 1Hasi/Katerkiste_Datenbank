@@ -2,58 +2,48 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { detailsProduct, updateProduct } from '../actions/productActions';
+import { detailsProduct, createProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
-export default function ProductEditScreen(props) {
-  const navigate = useNavigate();
-  const params = useParams();
-  const { id: productId } = params;
-  const [name, setName] = useState('');
-  const [bild, setBild] = useState('');
-  const [preis, setPreis] = useState('');
-  const [beschreibung, setBeschreibung] = useState('');
+export default function ProductCreateScreen(props) {
+    const navigate = useNavigate();
+    const params = useParams();
+    const { id: productId } = params;
+    const [name, setName] = useState('');
+    const [bild, setBild] = useState('');
+    const [preis, setPreis] = useState('');
+    const [beschreibung, setBeschreibung] = useState('');
 
-  const productDetails = useSelector((state) => state.productDetails);
+const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
-  const productUpdate = useSelector((state) => state.productUpdate);
+  const productCreate = useSelector((state) => state.productCreate);
   const {
-    loading: loadingUpdate,
-    error: errorUpdate,
-    success: successUpdate,
-  } = productUpdate;
+    loading: loadingCreate,
+    error: errorCreate,
+    success: successCreate,
+    product: createdProduct,
+  } = productCreate;
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (successUpdate) {
-      navigate('/productlist');
-    }
-    if (!product || product._id !== productId || successUpdate) {
-      dispatch({ type: PRODUCT_UPDATE_RESET });
-      dispatch(detailsProduct(productId));
-    } else {
-      setName(product.name);
-      setBild(product.bild);
-      setPreis(product.preis);
-      setBeschreibung(product.beschreibung);
-    }
-  }, [product, dispatch, productId, successUpdate, navigate]);
-  const submitHandler = (e) => {
+    if (successCreate) {
+      dispatch({ type: PRODUCT_CREATE_RESET });
+      navigate(`/products/${createdProduct._id}/edit`);
+    }  
+    }, 
+    [product, dispatch, productId, successCreate, navigate]
+  );
+  const createHandler = (e) => {
     e.preventDefault();
     // TODO: dispatch update product
     dispatch(
-      updateProduct({
-        _id: productId,
-        name,
-        bild,
-        preis,
-        beschreibung,
-      })
+      createProduct(name, bild, preis, beschreibung)
     );
   };
+
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState('');
 
@@ -81,12 +71,12 @@ export default function ProductEditScreen(props) {
 
   return (
     <div>
-      <form className="form" onSubmit={submitHandler}>
+      <form className="form" onSubmit={createHandler}>
         <div>
-          <h1>Produkt Bearbeiten {productId}</h1>
+          <h1>Produkt Anlegen </h1>
         </div>
-        {loadingUpdate && <LoadingBox></LoadingBox>}
-        {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
+        {loadingCreate && <LoadingBox></LoadingBox>}
+        {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
@@ -99,7 +89,7 @@ export default function ProductEditScreen(props) {
                 id="name"
                 type="text"
                 placeholder="Name eingeben"
-                value={name}
+                
                 onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
@@ -109,7 +99,7 @@ export default function ProductEditScreen(props) {
                 id="preis"
                 type="text"
                 placeholder="Preis eingeben"
-                value={preis}
+                
                 onChange={(e) => setPreis(e.target.value)}
               ></input>
             </div>
@@ -119,7 +109,7 @@ export default function ProductEditScreen(props) {
                 id="bild"
                 type="text"
                 placeholder="Bild hochladen"
-                value={bild}
+                
                 onChange={(e) => setBild(e.target.value)}
               ></input>
             </div>
@@ -143,14 +133,14 @@ export default function ProductEditScreen(props) {
                 rows="3"
                 type="text"
                 placeholder="Produktbeschreibung"
-                value={beschreibung}
+                
                 onChange={(e) => setBeschreibung(e.target.value)}
               ></textarea>
             </div>
             <div>
               <label></label>
               <button className="primary" type="submit">
-                Aktualisieren
+                Anlegen
               </button>
             </div>
           </>
@@ -158,4 +148,5 @@ export default function ProductEditScreen(props) {
       </form>
     </div>
   );
-}
+
+};
