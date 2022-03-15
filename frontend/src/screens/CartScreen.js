@@ -32,7 +32,7 @@ export default function CartScreen(props) {
     navigate('/signin?redirect=/shipping');
   };
   return (
-    <div className="row top">
+    <div className="flexAngebot">
       <div className="col-2">
         <h1>Warenkorb</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
@@ -47,7 +47,7 @@ export default function CartScreen(props) {
                 <div className="row">
                   <div>
                     <img
-                      src={item.image}
+                      src={item.bild}
                       alt={item.name}
                       className="small"
                     ></img>
@@ -64,7 +64,7 @@ export default function CartScreen(props) {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).keys()].map((x) => (
+                      {[...Array(10).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
@@ -86,13 +86,13 @@ export default function CartScreen(props) {
           </ul>
         )}
       </div>
-      <div className="col-1">
+      <div className="col-4">
         <div className="card card-body">
           <ul>
             <li>
               <h2>
-                Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
-                {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                Gesamt ({cartItems.reduce((a, c) => a + c.qty, 0)} Produkte) : 
+                {cartItems.reduce((a, c) => a + c.preis * c.qty, 0)}€
               </h2>
             </li>
             <li>
