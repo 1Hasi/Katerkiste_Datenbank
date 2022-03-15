@@ -30,7 +30,8 @@ export default function PlaceOrderScreen(props) {
               <div className="card card-body">
                 <h2>Versandadresse</h2>
                 <p>
-                  <strong>Name:</strong> {cart.shippingAddress.vorname.nachname} <br />
+                  <strong>Name:</strong> {cart.shippingAddress.vorname} 
+                                        {cart.shippingAddress.nachname}<br />
                   <strong>Address: </strong> {cart.shippingAddress.adresse},
                   {cart.shippingAddress.stadt}, {cart.shippingAddress.plz}
                   ,{cart.shippingAddress.land}
@@ -66,7 +67,7 @@ export default function PlaceOrderScreen(props) {
                         </div>
 
                         <div>
-                          {item.qty} x ${item.preis} = ${item.qty * item.preis}
+                          {item.qty} x {item.preis}€ = {item.qty * item.preis}€
                         </div>
                       </div>
                     </li>
@@ -84,29 +85,29 @@ export default function PlaceOrderScreen(props) {
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
-                  <div>${cart.itemsPrice.toFixed(2)}</div>
+                  <div>Bestellung</div>
+                  <div>{cart.itemsPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
-                  <div>${cart.shippingPrice.toFixed(2)}</div>
+                  <div>Versand</div>
+                  <div>{cart.shippingPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
-                  <div>${cart.taxPrice.toFixed(2)}</div>
+                  <div>MwSt</div>
+                  <div>{cart.taxPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong>Gesamt</strong>
                   </div>
                   <div>
-                    <strong>${cart.totalPrice.toFixed(2)}</strong>
+                    <strong>{cart.totalPrice.toFixed(2)}€</strong>
                   </div>
                 </div>
               </li>
