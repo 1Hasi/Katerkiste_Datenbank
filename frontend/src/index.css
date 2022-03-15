@@ -377,15 +377,6 @@ footer {
 }
 
 /* Common */
-h1 {
-  font-size: 1.8rem;
-  padding: 1rem 0;
-}
-h2 {
-  font-size: 1.6rem;
-  padding: 1rem 0;
-}
-
 a {
   color: var(--whitegrey);
   text-decoration: none;
@@ -521,6 +512,14 @@ img.medium {
 }
 img.large {
   width: 100%;
+}
+
+/* cart */
+
+
+.h2W {
+  font-size: 2rem;
+  color: var(--darkblack)
 }
 
 /* Angebot Card */
