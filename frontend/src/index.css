@@ -440,6 +440,12 @@ a.brand {
   font-size: 3rem;
   font-weight: bold;
 }
+a.brand:hover {
+  color:var(--gold);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -514,14 +520,6 @@ img.large {
   width: 100%;
 }
 
-/* cart */
-
-
-.h2W {
-  font-size: 2rem;
-  color: var(--darkblack)
-}
-
 /* Angebot Card */
 .card {
   border: 0.5rem var(--gold);
@@ -545,6 +543,47 @@ img.large {
   color: var(--gold);
 }
 
+.badge {
+  background-color: var(--gold);
+  color: var(--whitegrey);
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.2rem;
+  margin-left: 0.35rem;
+}
+
+.h2W {
+  font-size: 2rem;
+  color: var(--darkblack)
+}
+
+/* Admin panel*/
+
+.h1Admin{
+  margin-left: 10px;
+}
+
+.table{
+  margin-left: 10px;
+}
+
+th{
+  color: var(--gold);
+  border-color: var(--whitegrey);
+  border-bottom: solid 1px;
+}
+
+tr{
+  border-color: var(--gold);
+  border: solid 1px;
+}
+
+.primary{
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 /* Alert */
 .loading {
   display: block !important;
@@ -562,11 +601,11 @@ img.large {
 }
 .alert-info {
   color: #2020a0;
-  background-color: #e0e0ff;
+  background-color: var(--gold);
 }
 .alert-danger {
   color: #a02020;
-  background-color: #ffe0e0;
+  background-color: var(--gold);
 }
 
 /* Form für regist/login */
@@ -595,7 +634,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: var(--gold);
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
