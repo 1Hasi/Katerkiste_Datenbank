@@ -15,6 +15,9 @@ import AngebotsScreen from './screens/AngebotsScreen';
 import KontaktScreen from './screens/KontaktScreen';
 import UeberUnsScreen from './screens/UeberUnsScreen';
 import CartScreen from './screens/CartScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
+import PaymentMethodScreen from './screens/PaymentMethodScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 
   function App() {
@@ -92,6 +95,9 @@ import CartScreen from './screens/CartScreen';
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
               <Route path="/cart" element={<CartScreen />}></Route>
               <Route path="/cart/:id" element={<CartScreen />}></Route>
+              <Route path="/shipping" component={<ShippingAddressScreen/>}></Route>
+              <Route path="/payment" component={<PaymentMethodScreen/>}></Route>
+              <Route path="/placeorder" component={<PlaceOrderScreen/>}></Route>
              
               <Route
               path="/productanlegen"
