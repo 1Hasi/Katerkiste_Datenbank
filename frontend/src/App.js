@@ -40,17 +40,23 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
                 Katerkiste
               </Link>
             </div>
-            <div>
+          <div>
+            
             <Link to="/">Home</Link>
               <Link to="/angebote">Angebote</Link>
               <Link to="/ueberuns">Über uns</Link>
               <Link to="/kontakt">Kontakt</Link>
-              <Link to="/cart">
+
+             
+              
+                <Link to="/cart">
               Warenkorb 
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
-            </Link>
+                </Link>
+               
+             
               {userInfo ? (
               <div className="dropdown">
                 <Link to="#">
@@ -87,17 +93,38 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
           <main>
             <Routes>
               <Route path="/products/:id" element={<ProductScreen/>} exact></Route>
-              <Route path="/products/:id/edit" element={<ProductEditScreen/>}></Route>
               <Route path="/signin" element={<SigninScreen/>}></Route>
               <Route path="/register" element={<RegisterScreen/>}></Route>
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
               <Route path="/kontakt" element={<KontaktScreen/>}></Route>
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
-              <Route path="/cart" element={<CartScreen />}></Route>
-              <Route path="/cart/:id" element={<CartScreen />}></Route>
-              <Route path="/shipping" element={<ShippingAddressScreen/>}></Route>
-              <Route path="/payment" element={<PaymentMethodScreen/>}></Route>
-              <Route path="/placeorder" element={<PlaceOrderScreen/>}></Route>
+
+              <Route path="/cart" 
+              element={
+              <PrivateRoute>
+                <CartScreen />
+              </PrivateRoute>
+              }></Route>
+              <Route path="/cart/:id" element={
+              <PrivateRoute>
+                  <CartScreen />
+               </PrivateRoute>
+              }></Route>
+              <Route path="/shipping" element={
+                <PrivateRoute>
+                  <ShippingAddressScreen/>
+               </PrivateRoute>
+              }></Route>
+              <Route path="/payment" element={
+              <PrivateRoute>
+                 <PaymentMethodScreen/>
+               </PrivateRoute>
+              }></Route>
+              <Route path="/placeorder" element={
+              <PrivateRoute>
+                <PlaceOrderScreen/>
+               </PrivateRoute>
+              }></Route>
              
               <Route
               path="/productanlegen"
@@ -114,6 +141,12 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
                 </AdminRoute>
               }></Route>
             
+            <Route path="/products/:id/edit" 
+            element={
+           <AdminRoute> 
+             <ProductEditScreen/>
+            </AdminRoute> 
+            }></Route>
 
               <Route path="/" element={<HomeScreen/>} exact></Route>
             </Routes>

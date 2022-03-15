@@ -11,6 +11,7 @@ import dotenv from 'dotenv';
 import tasksRoute from './routes/tasks.js';
 import userRouter from './routes/userRouter.js';
 import productRouter from './routes/productRouter.js';
+import orderRouter from './routes/orderRouter.js';
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.listen(port, () => {
 app.use('/', tasksRoute);
 app.use('/api/users', userRouter);
 app.use ('/api/products', productRouter);
+app.use('/api/orders', orderRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

@@ -11,13 +11,15 @@ export default function PaymentMethodScreen(props) {
   if (!shippingAddress.adresse) {
     navigate('/shipping');
   }
-  const [paypal, setPaypal] = useState('PayPal');
-  const [visa, setVisa] = useState('Visa');
-  const [mastercard, setMastercard] = useState('MasterCard');
+  const [paymentMethod, setPaymentMethod] = useState({
+      paypal: "Paypal",
+      visa: "Visa",
+      mastercard: "MasterCard",
+  });
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paypal, visa, mastercard));
+    dispatch(savePaymentMethod(paymentMethod));
     navigate('/placeorder');
   };
   return (
@@ -36,7 +38,7 @@ export default function PaymentMethodScreen(props) {
               value="PayPal"
               name="paymentMethod"
               required
-              onChange={(e) => setPaypal(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
             <label htmlFor="paypal">PayPal</label>
           </div>
@@ -49,7 +51,7 @@ export default function PaymentMethodScreen(props) {
               value="Visa"
               name="paymentMethod"
               required
-              onChange={(e) => setVisa(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
             <label htmlFor="visa">Visa</label>
           </div>
@@ -62,7 +64,7 @@ export default function PaymentMethodScreen(props) {
               value="MasterCard"
               name="paymentMethod"
               required
-              onChange={(e) => setMastercard(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
             <label htmlFor="mastercard">MasterCard</label>
           </div>

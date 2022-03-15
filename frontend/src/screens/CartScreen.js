@@ -31,6 +31,7 @@ export default function CartScreen(props) {
   const checkoutHandler = () => {
     navigate('/shipping');
   };
+
   return (
     <div className="flexAngebot">
       <div className="col-62">
