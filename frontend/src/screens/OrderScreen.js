@@ -124,7 +124,7 @@ export default function OrderScreen(props) {
                 </div>
               </li>
             </ul>
-          </div> tet
+          </div> 
         </div>
       </div>
     </div>
