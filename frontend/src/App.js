@@ -95,9 +95,9 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
               <Route path="/cart" element={<CartScreen />}></Route>
               <Route path="/cart/:id" element={<CartScreen />}></Route>
-              <Route path="/shipping" component={<ShippingAddressScreen/>}></Route>
-              <Route path="/payment" component={<PaymentMethodScreen/>}></Route>
-              <Route path="/placeorder" component={<PlaceOrderScreen/>}></Route>
+              <Route path="/shipping" element={<ShippingAddressScreen/>}></Route>
+              <Route path="/payment" element={<PaymentMethodScreen/>}></Route>
+              <Route path="/placeorder" element={<PlaceOrderScreen/>}></Route>
              
               <Route
               path="/productanlegen"
