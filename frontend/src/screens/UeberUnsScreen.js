@@ -43,13 +43,9 @@ return (
 						</p>
 					</div>
 				</div>
-
-				<div className="row left">
+				<div className="row left uu_h">		
 					<div className="horizontal_line">
-					</div>
-				</div>
-
-				<div className="row left uu_h">														
+					</div>												
 					<h2>Das Team</h2>
 					<div className="flex">
 						<div className="formimg">

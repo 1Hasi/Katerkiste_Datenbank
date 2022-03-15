@@ -37,19 +37,19 @@ export default function CartScreen(props) {
         <h1>Warenkorb</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
-          <MessageBox>
-            Nichts in Korb. <Link to="/">Jetzt Bestellen.</Link>
+          <MessageBox className="Msg">
+            <h2>Nichts in Korb.</h2><Link to="/angebote"><h2>Jetzt Bestellen.</h2></Link>
           </MessageBox>
         ) : (
           <ul>
             {cartItems.map((item) => (
               <li key={item.product}>
                 <div className="row">
-                  <div>
+                  <div className="col-12">
                     <img
+                      className="small"
                       src={item.bild}
                       alt={item.name}
-                      className="small"
                     ></img>
                   </div>
                   <div className="min-30">

@@ -189,8 +189,6 @@ header {
   width: 100%;
 }
 
-
-
 footer {
   grid-area: footer;
   background-color: var(--gold);	
@@ -240,17 +238,16 @@ footer {
 
 .uu_h h4{
   color: var(--whitegrey);
-  position: center;
+  text-align: center;
 }
 
 .uu_h h4.name {
   color: var(--gold);
-  position: center;
+  text-align: center;
 }
 
 .formimg{
-  flex: 1;
-  
+  flex: 1; 
 }
 
 
@@ -264,14 +261,12 @@ footer {
   border-radius: 2%;
 }
 
-.team {
-  padding: 1%;
+.uu_h p {
+  line-height: 1.5;
   text-align: center;
+  padding: 4px;
 }
-.team img {
-  width: 80%;
-  border-radius: 2%;
-}
+
 
 /* MAINPART KONTAKT */
 
@@ -306,11 +301,6 @@ footer {
   padding: 1%;
   text-align: center;
 }
-.team_k p {
-  line-height: 2.5;
-}
-
-
 
 /* ==== GRID SYSTEM ==== */
 .höhe{
@@ -331,7 +321,7 @@ footer {
 }
 
 .col-62 {
-  width: 46%;
+  width: 29.33%;
   margin-bottom: 100px;
 }
 
@@ -518,6 +508,12 @@ a.brand {
 /* Image */
 img {
   border-radius: 0.5rem;
+}
+img.small {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 img.medium {
   max-width: 29rem;
