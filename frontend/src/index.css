@@ -308,6 +308,23 @@ footer {
 
 
 /* ==== GRID SYSTEM ==== */
+.höhe{
+  height: 100vh;
+}
+
+.breite{
+  width: 20%;
+}
+
+.mitte{
+  display:block;
+  margin: 100px 0 auto 0;
+}
+
+.abstand{
+  margin-right: 20px;
+}
+
 .col-0 {
   width: 0.1%;
 }
@@ -582,7 +599,11 @@ img.large {
 
   .flex {
   display: flex;
-  
-}
+  }
+  .flexAngebot{
+    display: flex;
+    justify-content: center;
+  }
+
   
 }
