@@ -9,13 +9,15 @@ import Rating from '../components/Rating';
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const params = useParams();
-  const {id: productID} = params;
+  const {id: productId} = params;
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
 
   useEffect(() => {
-    dispatch(detailsProduct(productID));
-  }, [dispatch, productID]);
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId]);
 
   return (
     <div>

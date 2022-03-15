@@ -5,11 +5,11 @@ export default function Product(props) {
   const { product } = props;
   return (
     <div key={product._id} className="card">
-      <a href={`/product/${product._id}`}>
+      <a href={`/products/${product._id}`}>
         <img className="medium" src={product.bild} alt={product.name} />
       </a>
       <div className="card-body">
-        <a href={`/product/${product._id}`}>
+        <a href={`/products/${product._id}`}>
           <h2>{product.name}</h2>
         </a>
         <Rating

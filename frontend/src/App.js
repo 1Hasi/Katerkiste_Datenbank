@@ -94,15 +94,15 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
 		      	<div className="foot">
 			      	  <h4>Ihr habt Fragen? Schreibt uns!</h4>
 				      <div className="socialmedia left">
-                <a href="https://www.instagram.com/kater_kiste/" target="_blank">
+                <a href="https://www.instagram.com/kater_kiste/" target="_blank" rel="noreferrer">
                   <img src="img/icons/instagram.png" alt="Intagram"/>
                 </a>
 
-                <a href="https://www.facebook.com/kater.kiste/" target="_blank">
+                <a href="https://www.facebook.com/kater.kiste/" target="_blank" rel="noreferrer">
                   <img src="img/icons/facebook.png" alt="Facebook"/>
                 </a>
 
-					      <a href="https://twitter.com/katerkiste/" target="_blank">
+					      <a href="https://twitter.com/katerkiste/" target="_blank" rel="noreferrer">
 							    <img src="img/icons/twitter.png" alt="Twitter"/>
 					    	</a>
 				      </div>
@@ -119,13 +119,13 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
                 <h4>Sicher und bequem zahlen</h4>
 
 				      <div className="pay left">
-                  <a href="https://paypal.com/" target="_blank">
+                  <a href="https://paypal.com/" target="_blank" rel="noreferrer">
                     <img src="img/icons/paypal.png" alt="PayPal"></img>
                   </a>
-                  <a href="https://visa.de/" target="_blank">
+                  <a href="https://visa.de/" target="_blank" rel="noreferrer">
                     <img src="img/icons/visa.png" alt="Visa"></img>
                   </a>
-                  <a href="https://mastercard.de/" target="_blank">
+                  <a href="https://mastercard.de/" target="_blank" rel="noreferrer">
                     <img src="img/icons/mastercard.png" alt="MasterCard"></img>
                   </a>
               </div>
