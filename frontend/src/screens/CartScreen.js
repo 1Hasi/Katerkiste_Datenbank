@@ -34,11 +34,11 @@ export default function CartScreen(props) {
   return (
     <div className="row top">
       <div className="col-2">
-        <h1>Shopping Cart</h1>
+        <h1>Warenkorb</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
           <MessageBox>
-            Cart is empty. <Link to="/">Go Shopping</Link>
+            Nichts in Korb. <Link to="/">Jetzt Bestellen.</Link>
           </MessageBox>
         ) : (
           <ul>
@@ -71,13 +71,13 @@ export default function CartScreen(props) {
                       ))}
                     </select>
                   </div>
-                  <div>${item.price}</div>
+                  <div>{item.preis}€</div>
                   <div>
                     <button
                       type="button"
                       onClick={() => removeFromCartHandler(item.product)}
                     >
-                      Delete
+                      Entfernen
                     </button>
                   </div>
                 </div>

@@ -28,6 +28,12 @@ import CartScreen from './screens/CartScreen';
       dispatch(signout());
     };
 
+    const scrollBtn = document.querySelector(".totop_icon");
+      scrollBtn.addEventListener('click', () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+});
+
     return (
       <BrowserRouter>
         <div className="grid-container">
