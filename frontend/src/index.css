@@ -202,7 +202,8 @@ footer {
 }
 .foot {
   background-color: var(--gold);
-  margin: 3rem;
+  margin: 3rem 3rem 3rem 3rem;
+  float: top;
 }
 .pay {
 	margin-right: 2%;
@@ -456,6 +457,7 @@ a.brand:hover {
 }
 .row.center {
   justify-content: center;
+  align-items: top;
 }
 .row.top {
   align-items: flex-start;

@@ -41,8 +41,8 @@ export default function PlaceOrderScreen(props) {
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-      <div className="row top">
-        <div className="col-2">
+      <div className="flexAngebot">
+        <div className="col-3">
           <ul>
             <li>
               <div className="card card-body">
@@ -83,10 +83,11 @@ export default function PlaceOrderScreen(props) {
                             {item.name}
                           </Link>
                         </div>
-
+                        <p>
                         <div>
                           {item.qty} x {item.preis}€ = {item.qty * item.preis}€
                         </div>
+                        </p>
                       </div>
                     </li>
                   ))}
@@ -95,7 +96,7 @@ export default function PlaceOrderScreen(props) {
             </li>
           </ul>
         </div>
-        <div className="col-1">
+        <div className="col-3">
           <div className="card card-body">
             <ul>
               <li>
