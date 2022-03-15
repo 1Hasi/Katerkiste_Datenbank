@@ -516,7 +516,8 @@ img.small {
 }
 img.medium {
   max-width: 29rem;
-  width: 100%;
+  height: 679px;
+
 }
 img.large {
   width: 100%;
@@ -527,18 +528,26 @@ img.large {
   border: 0.5rem var(--gold);
   border-radius: 0.5rem var(--gold);
   background-color: var(--darkblack);
-  border-radius: 0.5rem;
   margin: 1rem;
 }
 .card-body {
   padding: 1rem;
 }
+
+.card-bodyAng {
+  padding: 1rem;
+  border-top: solid 1px var(--gold); 
+}
+
 .card-body > * {
   margin-bottom: 0.5rem;
 }
 .price {
   font-size: 2rem;
+  color: var(--gold)
 }
+
+
 
 .min-30{
   font-size: 2rem;
