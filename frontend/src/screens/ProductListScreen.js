@@ -84,6 +84,8 @@ export default function ProductListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
+        
+        
         <>
           <table className="table">
             <thead>

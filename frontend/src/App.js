@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
+import ProductCreateScreen from './screens/ProductCreateScreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
@@ -61,7 +62,10 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/productlist">Produkte</Link>
+                    <Link to="/productlist">Alle Produkte</Link>
+                  </li>
+                  <li>
+                    <Link to="/productanlegen">Produkte Anlegen</Link>
                   </li>
                 </ul>
               </div>
@@ -78,6 +82,13 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
               <Route path="/kontakt" element={<KontaktScreen/>}></Route>
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
              
+              <Route
+              path="/productanlegen"
+              element={
+                <AdminRoute>
+                  <ProductCreateScreen />
+                </AdminRoute>
+              }></Route>
               <Route
               path="/productlist"
               element={
