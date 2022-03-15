@@ -20,6 +20,7 @@ import { cartReducer } from './reducers/cartReducers';
 import { 
   orderCreateReducer,  
   orderDetailsReducer, 
+  orderMineListReducer,
 } from './reducers/orderReducers';
 
 const initialState = {
@@ -51,6 +52,7 @@ const reducer = combineReducers({
   cart: cartReducer,
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer,
+  orderMineList: orderMineListReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
