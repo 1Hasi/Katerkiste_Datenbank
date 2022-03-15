@@ -14,10 +14,13 @@ import RegisterScreen from './screens/RegisterScreen';
 import AngebotsScreen from './screens/AngebotsScreen';
 import KontaktScreen from './screens/KontaktScreen';
 import UeberUnsScreen from './screens/UeberUnsScreen';
+import CartScreen from './screens/CartScreen';
 
 
   function App() {
 
+    const cart = useSelector((state) => state.cart);
+    const { cartItems } = cart;
     const userSignin = useSelector((state) => state.userSignin);
     const { userInfo } = userSignin;
     const dispatch = useDispatch();
@@ -39,6 +42,12 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
               <Link to="/angebote">Angebote</Link>
               <Link to="/ueberuns">Über uns</Link>
               <Link to="/kontakt">Kontakt</Link>
+              <Link to="/cart">
+              Cart
+              {cartItems.length > 0 && (
+                <span className="badge">{cartItems.length}</span>
+              )}
+            </Link>
               {userInfo ? (
               <div className="dropdown">
                 <Link to="#">
@@ -81,6 +90,7 @@ import UeberUnsScreen from './screens/UeberUnsScreen';
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
               <Route path="/kontakt" element={<KontaktScreen/>}></Route>
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
+              <Route path="/cart/:id?" component={<CartScreen/>}></Route>
              
               <Route
               path="/productanlegen"

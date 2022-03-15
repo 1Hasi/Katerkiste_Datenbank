@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
@@ -10,6 +10,7 @@ export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const params = useParams();
   const {id: productId} = params;
+  const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
   const userSignin = useSelector((state) => state.userSignin);
