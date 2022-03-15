@@ -28,12 +28,6 @@ import CartScreen from './screens/CartScreen';
       dispatch(signout());
     };
 
-    const scrollBtn = document.querySelector(".totop_icon");
-      scrollBtn.addEventListener('click', () => {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-});
-
     return (
       <BrowserRouter>
         <div className="grid-container">
@@ -49,7 +43,7 @@ import CartScreen from './screens/CartScreen';
               <Link to="/ueberuns">Über uns</Link>
               <Link to="/kontakt">Kontakt</Link>
               <Link to="/cart">
-              Cart
+              Warenkorb 
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
@@ -96,7 +90,8 @@ import CartScreen from './screens/CartScreen';
               <Route path="/angebote" element={<AngebotsScreen/>}></Route>
               <Route path="/kontakt" element={<KontaktScreen/>}></Route>
               <Route path="/ueberuns" element={<UeberUnsScreen/>}></Route>
-              <Route path="/cart/:id?" component={<CartScreen/>}></Route>
+              <Route path="/cart" element={<CartScreen />}></Route>
+              <Route path="/cart/:id" element={<CartScreen />}></Route>
              
               <Route
               path="/productanlegen"
