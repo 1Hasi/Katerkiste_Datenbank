@@ -76,10 +76,12 @@ const productDetails = useSelector((state) => state.productDetails);
           <h1>Produkt Anlegen </h1>
         </div>
         {loadingCreate && <LoadingBox></LoadingBox>}
-       
+        {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
         {loading ? (
           <LoadingBox></LoadingBox>
-        ) :  (
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
           <>
             <div>
               <label htmlFor="name">Name</label>

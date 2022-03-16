@@ -75,10 +75,12 @@ export default function ProductListScreen(props) {
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
       {loadingCreate && <LoadingBox></LoadingBox>}
-      
+      {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
-      ) :  (
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
         
         
         <>
@@ -106,14 +108,14 @@ export default function ProductListScreen(props) {
                       className="small"
                       onClick={() => navigate(`/products/${product._id}/edit`)}
                     >
-                      Edit
+                      Bearbeiten
                     </button>
                     <button
                       type="button"
                       className="small"
                       onClick={() => deleteHandler(product)}
                     >
-                      Delete
+                      Löschen
                     </button>
                   </td>
                 </tr>
