@@ -28,7 +28,7 @@ export default function OrderScreen(props) {
               <div className="card card-body">
                 <h2>Versandadresse:</h2>
                 <p>
-                  <strong>Name:</strong> {order.shippingAddress.vorname} 
+                  <strong>Name:</strong> {order.shippingAddress.vorname} {' '}
                                          {order.shippingAddress.nachname} <br />
                   <strong>Address: </strong> {order.shippingAddress.adresse}<br />
                   {order.shippingAddress.plz} {' '} {order.shippingAddress.stadt}<br />
@@ -97,7 +97,7 @@ export default function OrderScreen(props) {
               <li>
                 <div className="row">
                   <div>Bestellung</div>
-                  <div>${order.itemsPrice.toFixed(2)}</div>
+                  <div>{order.itemsPrice.toFixed(2)}€</div>
                 </div>
               </li>
               <li>
