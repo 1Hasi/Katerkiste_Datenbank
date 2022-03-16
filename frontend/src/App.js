@@ -19,6 +19,8 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 
   function App() {
@@ -64,6 +66,12 @@ import OrderScreen from './screens/OrderScreen';
                   {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
                 </Link>
                 <ul className="dropdown-content">
+                <li>
+                    <Link to="/profile">Mein Profil</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderhistory">Meine Bestellungen</Link>
+                  </li>
                   <li>
                     <Link to="#signout" onClick={signoutHandler}>
                       Sign Out
@@ -135,6 +143,19 @@ import OrderScreen from './screens/OrderScreen';
               <Route path="/order/:id" element={
                 <PrivateRoute>
                   <OrderScreen/>
+                </PrivateRoute>
+              }></Route>
+
+
+              <Route path="/orderhistory" element={
+                <PrivateRoute>
+                  <OrderHistoryScreen/>
+                </PrivateRoute>
+              }></Route>
+
+              <Route path="/profile" element={
+                <PrivateRoute>
+                  <ProfileScreen/>
                 </PrivateRoute>
               }></Route>
              
