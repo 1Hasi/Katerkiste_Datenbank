@@ -75,12 +75,10 @@ export default function ProductListScreen(props) {
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
       {loadingCreate && <LoadingBox></LoadingBox>}
-      {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
+      
       {loading ? (
         <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
+      ) :  (
         
         
         <>
