@@ -21,12 +21,12 @@ export default function OrderScreen(props) {
   ) : (
     <div>
       <h1>Bestellnummer: {order._id}</h1>
-      <div className="row top">
-        <div className="col-2">
+      <div className="flexAngebot">
+        <div className="col-5">
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Versandadresse</h2>
+                <h2>Versandadresse:</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.vorname} 
                                          {order.shippingAddress.nachname} <br />
@@ -36,7 +36,7 @@ export default function OrderScreen(props) {
                 </p>
                 {order.isDelivered ? (
                   <MessageBox variant="success">
-                    Geliefert am {order.deliveredAt}
+                    Geliefert am: {order.deliveredAt}
                   </MessageBox>
                 ) : (
                   <MessageBox variant="danger">Nicht geliefert</MessageBox>
@@ -45,13 +45,13 @@ export default function OrderScreen(props) {
             </li>
             <li>
               <div className="card card-body">
-                <h2>Zahlungsmethode</h2>
+                <h2>Zahlungsmethode:</h2>
                 <p>
-                  <strong>Methode:</strong> {order.paymentMethod}
+                  {order.paymentMethod}
                 </p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
-                    Bezahlt am {order.paidAt}
+                    Bezahlt am: {order.paidAt}
                   </MessageBox>
                 ) : (
                   <MessageBox variant="danger">Nicht bezahlt</MessageBox>
@@ -60,12 +60,12 @@ export default function OrderScreen(props) {
             </li>
             <li>
               <div className="card card-body">
-                <h2>Lieferung</h2>
+                <h2>Lieferung:</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
-                        <div>
+                       <div className="rowhorizontal_line">
+                        <div className="col-12">
                           <img
                             src={item.bild}
                             alt={item.name}
@@ -77,7 +77,6 @@ export default function OrderScreen(props) {
                             {item.name}
                           </Link>
                         </div>
-
                         <div>
                           {item.qty} x {item.preis}€ = {item.qty * item.preis}€
                         </div>
@@ -89,7 +88,7 @@ export default function OrderScreen(props) {
             </li>
           </ul>
         </div>
-        <div className="col-1">
+        <div className="col-3">
           <div className="card card-body">
             <ul>
               <li>

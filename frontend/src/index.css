@@ -455,6 +455,14 @@ a.brand:hover {
   justify-content: space-between;
   align-items: center;
 }
+.rowhorizontal_line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 5px var(--gold);														/* horizontal Gold */
+  padding-top: 10px;
+}
 .row.center {
   justify-content: center;
   align-items: top;
