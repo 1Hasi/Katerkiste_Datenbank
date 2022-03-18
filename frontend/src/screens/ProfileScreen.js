@@ -48,8 +48,7 @@ export default function ProfileScreen() {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Mein Profil <br/>
-              UserID: {user._id}
+          <h1>Mein Profil
           </h1>
         </div>
         {loading ? (
