@@ -48,7 +48,9 @@ export default function ProfileScreen() {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Mein Profil</h1>
+          <h1>Mein Profil <br/>
+              UserID: {user._id}
+          </h1>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -62,7 +64,7 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                Profil Aktualisierung Erfolgreich!
               </MessageBox>
             )}
             <div>
@@ -86,7 +88,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Passwort</label>
               <input
                 id="password"
                 type="password"
@@ -95,7 +97,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">Passwort erneut eingeben</label>
               <input
                 id="confirmPassword"
                 type="password"

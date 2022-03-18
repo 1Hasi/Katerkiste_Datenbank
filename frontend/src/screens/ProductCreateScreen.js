@@ -34,11 +34,10 @@ const productDetails = useSelector((state) => state.productDetails);
       navigate(`/products/${createdProduct._id}/edit`);
     }  
     }, 
-    [product, dispatch, productId, successCreate, navigate]
+    [createdProduct, navigate, product, dispatch, productId, successCreate]
   );
   const createHandler = (e) => {
     e.preventDefault();
-    // TODO: dispatch update product
     dispatch(
       createProduct(name, bild, preis, beschreibung)
     );
@@ -52,7 +51,7 @@ const productDetails = useSelector((state) => state.productDetails);
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();
-    bodyFormData.append('bild', file);
+    bodyFormData.append('image', file);
     setLoadingUpload(true);
     try {
       const { data } = await Axios.post('/api/uploads', bodyFormData, {
