@@ -60,7 +60,7 @@ export default function ProductScreen(props) {
                 <ul>
                   <li>
                     <div className="row">
-                      <div>Startpreis</div>
+                      <div>Preis</div>
                       <div className="price">{product.preis}€</div>
                     </div>
                   </li>
