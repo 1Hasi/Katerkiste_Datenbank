@@ -21,6 +21,8 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
 
 
   function App() {
@@ -93,6 +95,9 @@ import ProfileScreen from './screens/ProfileScreen';
                   </li>
                   <li>
                     <Link to="/productanlegen">Produkte Anlegen</Link>
+                  </li>
+                  <li>
+                    <Link to="/userlist">Benutzerübersicht</Link>
                   </li>
                 </ul>
               </div>
@@ -180,6 +185,22 @@ import ProfileScreen from './screens/ProfileScreen';
              <ProductEditScreen/>
             </AdminRoute> 
             }></Route>
+
+            <Route
+              path="/userlist"
+              element={
+                <AdminRoute>
+                  <UserListScreen />
+                </AdminRoute>
+              }></Route>
+
+              <Route
+              path="/user/:id/edit"
+              element={
+                <AdminRoute>
+                  <UserEditScreen />
+                </AdminRoute>
+              }></Route>
 
               <Route path="/" element={<HomeScreen/>} exact></Route>
             </Routes>

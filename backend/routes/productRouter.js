@@ -47,14 +47,9 @@ productRouter.post(
       beschreibung : req.body.beschreibung
     });
     const createdProduct = await product.save();
-    res.send({
-      _id: createdProduct._id,
-      name: createdProduct.name,
-      bild: createdProduct.bild,
-      preis: createdProduct.preis,
-      beschreibung: createdProduct.beschreibung
-    }, 
-      { message: 'Produkt angelegt', product: createdProduct });
+    res
+    .status(201)
+    .send({ message: 'Produkt angelegt', product: createdProduct });
   })
 );
 productRouter.put(
